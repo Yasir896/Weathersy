@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Weathersy</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">From the Square world,\nHello, %1$s!</string>
+    <string name="open_weather_api_key">aa8a6d51aead3aa3cda78690a10cdf6cc</string>
+</resources>
