@@ -1,3 +1,4 @@
 <resources>
     <string name="hello_world">From the Round world,\nHello, %1$s!</string>
+    <string name="open_weather_api_key">aa8a6d51aead3aa3cda78690a10cdf6cc</string>
 </resources>

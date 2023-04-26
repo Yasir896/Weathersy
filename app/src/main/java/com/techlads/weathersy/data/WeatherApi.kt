@@ -23,6 +23,6 @@ interface WeatherApi {
             .create(WeatherApi::class.java)
     }
 
-    @GET("/data/2.5/weather")
+    @GET("/data/3.0/onecall")
     suspend fun getWeatherDetails(@Query("lat") lat: Double, @Query("lon") long: Double, @Query("appid") appid: String): WeatherDto
 }

@@ -4,6 +4,7 @@ import android.Manifest
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Looper
+import android.util.Log
 import androidx.compose.runtime.mutableStateOf
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -44,12 +45,13 @@ class LocationUtil {
 
         fusedLocationProviderClient.requestLocationUpdates(locationRequest,object : LocationCallback() {
             override fun onLocationResult(p0: LocationResult) {
+                Log.d("CurrentLocation", p0.locations.toString())
                 for (location in p0.locations){
                     CoroutineScope(Dispatchers.IO).launch {
                         val weatherDTO = WeatherApi
                             .apiInstance
-                            .getWeatherDetails(location.latitude,
-                                location.longitude,
+                            .getWeatherDetails(34.5203696,
+                                74.3587473,
                                 context.resources.getString(R.string.open_weather_api_key))
                         dataLoaded.value = true;
                         data.value = Weather(name = weatherDTO.name,
